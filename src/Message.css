@@ -18,3 +18,17 @@
 .message_guestCard{
     background-color: rgb(233, 227, 227) !important;
 }
+
+.message_userName{
+    text-align: left;
+    font-weight: 800;
+    padding-left: 0.1rem;
+}
+
+.message_date{
+    font-size: small;
+}
+
+.mesage_text{
+    text-align: left;
+}

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Button , FormControl, Input, InputLabel} from '@material-ui/core';
+import { FormControl, Input } from '@material-ui/core';
 import Message from './Message';
 import db from './firebase';
 import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
 import { IconButton } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
+
 
 function App() {
   const [input, setInput] = useState('');
@@ -32,11 +33,15 @@ function App() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    db.collection('messages').add({
+    console.log(db.collection('messages').add({
       text: input,
       username: username,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    })
+    }));
+    // console.log("input is => ", input, 
+    // "username is =>", username, "timestamp is =>", 
+    // moment(firebase.firestore.FieldValue.serverTimestamp().toDate()).format('MMMM Do YYYY, h:mm a'));
+    
     setInput('');
   };
   
@@ -53,7 +58,7 @@ function App() {
           <Input className="app_input" placeholder="Enter a message..." onChange={textHandler} value={input}/>
           
           <IconButton className="app_iconButton" disabled={!input} variant="contained" color="primary" type="submit" onClick={sendMessage}>
-            <SendIcon />
+            <SendIcon color="primary" />
           </IconButton>
 
       </FormControl>
@@ -63,10 +68,12 @@ function App() {
       {/* message themselves */}
       <FlipMove>
         {
-          messages.map( ({ id, message }) => (
-          <p><Message key={id} username={username} message={message}/></p>
+          messages.map( ({ id, message }) => {
+          return (
+          <Message key={id} username={username} message={message}/>
+          )
 
-          ))
+          })
         }
       </FlipMove>
     </div>
