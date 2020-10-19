@@ -38,9 +38,6 @@ function App() {
       username: username,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }));
-    // console.log("input is => ", input, 
-    // "username is =>", username, "timestamp is =>", 
-    // moment(firebase.firestore.FieldValue.serverTimestamp().toDate()).format('MMMM Do YYYY, h:mm a'));
     
     setInput('');
   };
