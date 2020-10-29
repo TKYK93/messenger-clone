@@ -69,7 +69,6 @@ function App() {
           return (
           <Message key={id} username={username} message={message}/>
           )
-
           })
         }
       </FlipMove>

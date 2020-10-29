@@ -10,15 +10,12 @@
   background-color: lightgray;
   width: 90%;
   margin: 20px;
-
-
 }
 
-/* Material Icon の設定が優先されるため、書き換え＋Importantが必要 */
+/* Material Icon has higher priority without !important */
 .app_formControl{
   display: flex !important;
   flex-direction: row !important;
-
 }
 
 .app_input {

@@ -1,1 +1,7 @@
-This project is build in React in accordance with the instruction provided by Clever Programmer.
+## About this project
+This project was built in accordance with the instructuion provided by Clever Programmer.
+
+## Built With 
+- React
+- Firebase (Cloud Firestore)
+- MaterialUI
