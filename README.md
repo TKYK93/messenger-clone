@@ -1,5 +1,9 @@
 ## About this project
-This project was built in accordance with the instructuion provided by Clever Programmer.
+Please set your own firebase config in your local repository after clonig this repository.
+```
+npm install
+npm start
+```
 
 ## Built With 
 - React
